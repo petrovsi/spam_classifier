@@ -8,6 +8,7 @@ def run_online(classifier, setting):
     while True:
         features = sf.get_features(input('Your new email: '), setting)
         if (len(features) == 0):
+			print("Thank you and Goodbye!") 
             break
         print (classifier.classify(features))
 
@@ -18,6 +19,8 @@ all_emails += [(email, 'ham') for email in ham]
 random.shuffle(all_emails)
 print ('Corpus size = ' + str(len(all_emails)) + ' emails')
  
-all_features = [(sf.get_features(email, ''), label) for (email, label) in all_emails]
-train_set, test_set, classifier = sf.train(all_features, 1.0)
-
+   # extract the features
+all_features = [(get_features(email, ''), label) for (email, label) in all_emails]
+print ('Collected ' + str(len(all_features)) + ' feature sets') # specific: all_features = [(get_features(email, 'bow'), label) for (email, label) in all_emails] 
+train_set, test_set, classifier = train(all_features, 0.8) # training the classifier; 80% of data for train set and 20 percent for test_set
+run_online(classifier, "")
