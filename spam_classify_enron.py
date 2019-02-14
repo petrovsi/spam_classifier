@@ -1,8 +1,7 @@
 #  download and unarchive any of the folders in the directory with the code
 # – for example,  download and unarchive “enron1/” folder, 
 # which contains 3672 legitimate (ham) emails and 1500 spam emails.
-# http://www2.aueb.gr/users/ion/data/enron-spam/ Korpus zum Herunterladen
-# from __future__ import print_function, division für Python3 unnötig
+
 import nltk
 import os
 import random
@@ -46,31 +45,10 @@ def train(features, samples_proportion):
     classifier = NaiveBayesClassifier.train(train_set)
     return train_set, test_set, classifier
 	
-def evaluate(train_set, test_set, classifier):
-    print ('Accuracy on the training set = ' + str(classify.accuracy(classifier, train_set)))
-    print ('Accuracy of the test set = ' + str(classify.accuracy(classifier, test_set)))
-
-def evaluate(train_set, test_set, classifier):
-    # check how the classifier performs on the training and test sets
-    print ('Accuracy on the training set = ' + str(classify.accuracy(classifier, train_set)))
-    print ('Accuracy of the test set = ' + str(classify.accuracy(classifier, test_set)))
-    # check which words are most informative for the classifier
-    classifier.show_most_informative_features(20)
 
 
 
 
-if __name__ == "__main__":
-    # initialise the data
-    spam = init_lists('enron1/spam/')
-    ham = init_lists('enron1/ham/')
-    all_emails = [(email, 'spam') for email in spam]
-    all_emails += [(email, 'ham') for email in ham]
-    random.shuffle(all_emails)
-    print ('Corpus size = ' + str(len(all_emails)) + ' emails')
- 
-    # extract the features
-    all_features = [(get_features(email, ''), label) for (email, label) in all_emails]
-    print ('Collected ' + str(len(all_features)) + ' feature sets') # specific: all_features = [(get_features(email, 'bow'), label) for (email, label) in all_emails] 
-    train_set, test_set, classifier = train(all_features, 0.8) # training the classifier; 80% of data for train set and 20 percent for test_set
-    evaluate(train_set, test_set, classifier) # calling the evaluate function, shuffled data to avoid bias 
+
+
+    

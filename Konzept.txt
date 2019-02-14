@@ -1,0 +1,20 @@
+﻿1. Einen Korpus mit Emails finden (sowohl spam, als auch ham=gewünschte emails) 
+	a. Enron Dataset
+	b. Ling-spam (bereits lemmatisiert)
+	c. Daten randomisieren - d.h zufällig von spam oder ham eine Email  (random.shuffle)
+2. Vorbereitung: 
+	a. Stoppwörter entfernen (z.B. "and", "so", "of", "or") und in (set oder Menge) stopwords zusammenstellen
+	b. Nichtwörter und Punktation entfernen - auch zur stopwords-Liste
+	c. Lemmatisierung : 
+		- tokenize
+		- lemmatize
+		- maketolowercase
+3. Features extrachieren: 
+	a. Stoppwörter von der Analyse entfernen
+	b. Wortvorkommen für spam, für ham, für alle zählen (Counter-Operator) - welche Wörter können ein Indikator für spam sein
+4. Den Classifier trainieren:
+	a. train_set und test_set erstellen mtihilfe Naive Bayes Classifier
+	b. classifier anwenden
+5. Evalution
+	a. Genauigkeit schätzen (muss nicht unbedingt)
+	b. classifier.show_most_informative_features(zahl) the top informative words 
