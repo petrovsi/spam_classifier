@@ -1,1 +1,7 @@
 Quellen hier reinpacken --> dann vllt zu README?
+
+https://aclweb.org/aclwiki/Spam_filtering_datasets
+https://cambridgecoding.wordpress.com/2016/01/25/implementing-your-own-spam-filter/
+https://cambridgecoding.wordpress.com/2016/02/01/using-your-spam-filter-in-real-life/
+https://github.com/petrovsi/spam_classifier
+http://www.nltk.org/book_1ed/ch06.html
